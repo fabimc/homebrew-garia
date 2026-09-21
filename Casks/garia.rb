@@ -4,7 +4,7 @@ cask "garia" do
 
   url "https://github.com/fabimc/garia/releases/download/v#{version}/Garia_#{version}_universal.dmg"
   name "Garia"
-  desc "Download manager for macOS"
+  desc "Download manager"
   homepage "https://github.com/fabimc/garia"
 
   livecheck do
@@ -13,7 +13,7 @@ cask "garia" do
   end
 
   auto_updates true
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   app "Garia.app"
 
