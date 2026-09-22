@@ -12,14 +12,9 @@ cask "garia" do
     strategy :github_latest
   end
 
-  depends_on macos: :big_sur
+  depends_on :macos
 
   app "Garia.app"
-
-  caveats <<~EOS
-    Garia is not notarized. If macOS says it is damaged or cannot be opened, run:
-      xattr -dr com.apple.quarantine /Applications/Garia.app
-  EOS
 
   uninstall quit: "com.fabimc.garia"
 
@@ -33,4 +28,9 @@ cask "garia" do
     "~/Library/Saved Application State/com.fabimc.garia.savedState",
     "~/Library/WebKit/com.fabimc.garia",
   ]
+
+  caveats <<~EOS
+    Garia is not notarized. If macOS says it is damaged or cannot be opened, run:
+      xattr -dr com.apple.quarantine /Applications/Garia.app
+  EOS
 end
