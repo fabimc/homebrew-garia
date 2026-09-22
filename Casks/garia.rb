@@ -1,6 +1,6 @@
 cask "garia" do
   version "0.1.0"
-  sha256 :no_check
+  sha256 "9e6c278a9387649a0371d769e922c54bbcacc25348c2724b05690e669ab27874"
 
   url "https://github.com/fabimc/garia/releases/download/v#{version}/Garia_#{version}_universal.dmg"
   name "Garia"
@@ -12,10 +12,14 @@ cask "garia" do
     strategy :github_latest
   end
 
-  auto_updates true
   depends_on macos: :big_sur
 
   app "Garia.app"
+
+  caveats <<~EOS
+    Garia is not notarized. If macOS says it is damaged or cannot be opened, run:
+      xattr -dr com.apple.quarantine /Applications/Garia.app
+  EOS
 
   uninstall quit: "com.fabimc.garia"
 
