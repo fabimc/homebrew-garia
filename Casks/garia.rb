@@ -1,6 +1,6 @@
 cask "garia" do
-  version "0.1.0"
-  sha256 "9e6c278a9387649a0371d769e922c54bbcacc25348c2724b05690e669ab27874"
+  version "0.2.0"
+  sha256 "cddf72a4b2e853105f296f2d9ecab5e3fa470a6c565ebe257cad4b0a8dc58559"
 
   url "https://github.com/fabimc/garia/releases/download/v#{version}/Garia_#{version}_universal.dmg"
   name "Garia"
